@@ -1090,7 +1090,7 @@
                 position: relative;
             }
 
-            .demo-phone-frame::before {
+            /* .demo-phone-frame::before {
                 content: '';
                 position: absolute;
                 top: 16px;
@@ -1100,7 +1100,7 @@
                 height: 5px;
                 background: #3a3a3a;
                 border-radius: 10px;
-            }
+            } */
 
             .demo-iframe {
                 width: 100%;
@@ -3991,6 +3991,13 @@ body {
     </div>
 </div>
 
+<div class="demo-iframe-container" id="demoContainer">
+    <div class="demo-phone-frame">
+        <iframe class="demo-iframe" id="demoIframe" src="about:blank"></iframe>
+    </div>
+    <button class="demo-close" id="demoCloseBtn">✕</button>
+</div>
+
 
 
 
@@ -3998,22 +4005,22 @@ body {
 
 <script>
     const templatesData = [
-        { id: 1, name: "Lily", style: "Ботаническая элегантность", desc: "Нежные зелёные и пастельные тона, эффект растворения фотографий, цветочные акценты. Идеален для летней свадьбы на природе в усадьбе." },
-        { id: 2, name: "Timeless", style: "Элегантная классика", desc: "Тёмно-белая цветовая гамма, элегантная типографика, музыкальный плеер. Идеален для торжественной свадьбы." },
-        { id: 3, name: "Grebnivo", style: "Винтажная классика", desc: "Бордово-белая цветовая гамма, круговой аудиоплеер, календарь с выделенной датой. Идеален для торжественной свадьбы." },
-        { id: 4, name: "September", style: "Светлая воздушность", desc: "Пастельные тона, минимализм, цветовые акценты. Идеален для тёплого торжества." },
-        { id: 5, name: "Timeless", style: "Элегантный винтаж", desc: "Тёплая природная гамма, плавные линии, атмосфера уюта и душевности." },
-        { id: 6, name: "December", style: "Шебби-шик", desc: "Светлая воздушность, пастельные оттенки, нежность и лёгкость." },
-        { id: 7, name: "Vouage", style: "Журнал моды", desc: "Чёрно-белая гамма, строгая типографика, винтажная плёночная эстетика." },
-        { id: 8, name: "Childhood", style: "Ностальгический романтизм", desc: "Лёгкая винтажность, тёплые оттенки, душевность и искренность." },
-        { id: 9, name: "Breeze", style: "Морской бриз", desc: "Свежесть бирюзы, природные оттенки, лёгкость и воздушность у воды." },
-        { id: 10, name: "Classic", style: "Классическая элегантность", desc: "Сдержанная роскошь, выдержанные пропорции, благородство линий и timeless-эстетика." },
-        { id: 11, name: "Cocoa", style: "Шоколадная элегантность", desc: "Тёплая гамма кофе и какао, благородство природных оттенков, уютная роскошь." },
-        { id: 12, name: "Blossom", style: "Нежный натурализм", desc: "Природная мягкость, спокойные земные оттенки, атмосфера тепла и искренности." },
-        { id: 13, name: "Torn", style: "Артистичный винтаж", desc: "Эффект рваной бумаги, небрежная элегантность, камерность и душевность." },
-        { id: 14, name: "Tilted", style: "Каменная эстетика", desc: "Текстура керамогранита, графичность, холодная благородная сдержанность." },
-        { id: 15, name: "Ethereal", style: "Пастельная нежность", desc: "Мягкие бежевые оттенки, воздушность, утончённая лёгкость и светлая эстетика." },
-        { id: 16, name: "Сhildhood 2", style: "Воспоминание детства", desc: "Жених и невеста спрятались лица за своими детскими фотографиями." }
+        { id: 1, name: "Lily", style: "Ботаническая элегантность", desc: "Нежные зелёные и пастельные тона, эффект растворения фотографий, цветочные акценты. Идеален для летней свадьбы на природе в усадьбе.", demo: "https://viktoria.andreyalexandra.ru/" },
+        { id: 2, name: "Timeless", style: "Элегантная классика", desc: "Тёмно-белая цветовая гамма, элегантная типографика, музыкальный плеер. Идеален для торжественной свадьбы.", demo: "https://hubbleofficial1163-design.github.io/minimalizm/" },
+        { id: 3, name: "Grebnivo", style: "Винтажная классика", desc: "Бордово-белая цветовая гамма, круговой аудиоплеер, календарь с выделенной датой. Идеален для торжественной свадьбы.", demo: "https://hubbleofficial1163-design.github.io/shablon2/" },
+        { id: 4, name: "September", style: "Светлая воздушность", desc: "Пастельные тона, минимализм, цветовые акценты. Идеален для тёплого торжества.", demo: "https://hubbleofficial1163-design.github.io/paper/" },
+        { id: 5, name: "Timeless", style: "Элегантный винтаж", desc: "Тёплая природная гамма, плавные линии, атмосфера уюта и душевности.", demo: "https://hubbleofficial1163-design.github.io/child/" },
+        { id: 6, name: "December", style: "Шебби-шик", desc: "Светлая воздушность, пастельные оттенки, нежность и лёгкость.", demo: "https://hubbleofficial1163-design.github.io/perplex/" },
+        { id: 7, name: "Vouage", style: "Журнал моды", desc: "Чёрно-белая гамма, строгая типографика, винтажная плёночная эстетика.", demo: "https://hubbleofficial1163-design.github.io/vouage/" },
+        { id: 8, name: "Childhood", style: "Ностальгический романтизм", desc: "Лёгкая винтажность, тёплые оттенки, душевность и искренность.", demo: "https://hubbleofficial1163-design.github.io/shablon3/" },
+        { id: 9, name: "Breeze", style: "Морской бриз", desc: "Свежесть бирюзы, природные оттенки, лёгкость и воздушность у воды.", demo: "https://hubbleofficial1163-design.github.io/shablon4/" },
+        { id: 10, name: "Classic", style: "Классическая элегантность", desc: "Сдержанная роскошь, выдержанные пропорции, благородство линий и timeless-эстетика.", demo: "https://hubbleofficial1163-design.github.io/primer66/" },
+        { id: 11, name: "Cocoa", style: "Шоколадная элегантность", desc: "Тёплая гамма кофе и какао, благородство природных оттенков, уютная роскошь.", demo: "https://hubbleofficial1163-design.github.io/shablonBORDOV/" },
+        { id: 12, name: "Blossom", style: "Нежный натурализм", desc: "Природная мягкость, спокойные земные оттенки, атмосфера тепла и искренности.", demo: "https://hubbleofficial1163-design.github.io/shablon1/" },
+        { id: 13, name: "Torn", style: "Артистичный винтаж", desc: "Эффект рваной бумаги, небрежная элегантность, камерность и душевность.", demo: "https://ksenia.andreyalexandra.ru/" },
+        { id: 14, name: "Tilted", style: "Каменная эстетика", desc: "Текстура керамогранита, графичность, холодная благородная сдержанность.", demo: "https://hubbleofficial1163-design.github.io/shablon5/" },
+        { id: 15, name: "Ethereal", style: "Пастельная нежность", desc: "Мягкие бежевые оттенки, воздушность, утончённая лёгкость и светлая эстетика.", demo: "https://hubbleofficial1163-design.github.io/shabon7/" },
+        { id: 16, name: "Сhildhood 2", style: "Воспоминание детства", desc: "Жених и невеста спрятались лица за своими детскими фотографиями.", demo: "https://hubbleofficial1163-design.github.io/shablon8/" }
     ];
 
     function renderTemplates() {
@@ -4156,7 +4163,6 @@ function closeDemo() {
     document.body.style.overflow = '';
 }
 
-// Обновите openModal — добавьте установку URL для демо
 function openModal(id, name, imgSrc, shortDesc) {
     if (!modal) return;
     modalImage.src = imgSrc;
@@ -4164,11 +4170,25 @@ function openModal(id, name, imgSrc, shortDesc) {
     const fullDesc = shortDesc + " Полная версия сайта-приглашения включает: таймер до свадьбы, карту проезда, программу вечера, форму RSVP и онлайн-галерею для фотографий.";
     modalDesc.innerText = fullDesc;
     
-    // Устанавливаем URL для демо (замените на реальные ссылки)
-    currentDemoUrl = `demo/template-${id}.html`; // или любой другой URL
+    // ← БЕРЁМ URL ИЗ ДАННЫХ
+    const tpl = templatesData.find(t => t.id === id);
+    currentDemoUrl = tpl?.demo || '';
+    
     const demoBtn = document.getElementById('demoBtn');
     if (demoBtn) {
-        demoBtn.onclick = () => openDemo(currentDemoUrl);
+        demoBtn.onclick = () => {
+            if (!currentDemoUrl) {
+                alert('Демо-ссылка для этого шаблона пока не добавлена');
+                return;
+            }
+            if (window.matchMedia('(max-width: 768px)').matches) {
+                // Мобилка — новая вкладка
+                window.open(currentDemoUrl, '_blank', 'noopener,noreferrer');
+            } else {
+                // Десктоп — iframe в телефоне
+                openDemo(currentDemoUrl);
+            }
+        };
     }
     
     modal.style.display = 'flex';
@@ -4176,6 +4196,18 @@ function openModal(id, name, imgSrc, shortDesc) {
         modal.classList.add('active');
     }, 10);
     document.body.style.overflow = 'hidden';
+}
+
+function openDemoSmart(url) {
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+
+    if (isMobile) {
+        // На телефоне — новая вкладка
+        window.open(url, '_blank', 'noopener,noreferrer');
+    } else {
+        // На десктопе — iframe в "телефонной" рамке (ваш существующий механизм)
+        openDemo(url);
+    }
 }
 
 // Закрытие демо-окна
@@ -4699,11 +4731,13 @@ function resize() {
 </script>
 
 
-<div class="demo-iframe-container" id="demoContainer">
+<!-- <div class="demo-iframe-container" id="demoContainer">
     <div class="demo-phone-frame">
         <iframe class="demo-iframe" id="demoIframe" src="about:blank"></iframe>
     </div>
     <button class="demo-close" id="demoCloseBtn">✕</button>
-</div>
+</div> -->
+
+
 </body>
 </html>
