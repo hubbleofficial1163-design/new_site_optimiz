@@ -3481,7 +3481,7 @@ body {
         </p>
         <div class="hero__stats">
             <div class="stat">
-                <span class="stat__number">10+</span>
+                <span class="stat__number">15+</span>
                 <span class="stat__label">уникальных шаблонов</span>
             </div>
             <div class="stat">
@@ -4020,7 +4020,9 @@ body {
         { id: 13, name: "Torn", style: "Артистичный винтаж", desc: "Эффект рваной бумаги, небрежная элегантность, камерность и душевность.", demo: "https://ksenia.andreyalexandra.ru/" },
         { id: 14, name: "Tilted", style: "Каменная эстетика", desc: "Текстура керамогранита, графичность, холодная благородная сдержанность.", demo: "https://hubbleofficial1163-design.github.io/shablon5/" },
         { id: 15, name: "Ethereal", style: "Пастельная нежность", desc: "Мягкие бежевые оттенки, воздушность, утончённая лёгкость и светлая эстетика.", demo: "https://hubbleofficial1163-design.github.io/shabon7/" },
-        { id: 16, name: "Сhildhood 2", style: "Воспоминание детства", desc: "Жених и невеста спрятались лица за своими детскими фотографиями.", demo: "https://hubbleofficial1163-design.github.io/shablon8/" }
+        { id: 16, name: "Сhildhood 2", style: "Воспоминание детства", desc: "Жених и невеста спрятались лица за своими детскими фотографиями.", demo: "https://hubbleofficial1163-design.github.io/shablon8/"},
+        { id: 17, name: "Timeless 2", style: "Обновленный винтаж", desc: "Обновленная версия бестселлера Timeless. Данный шаблон был сделать для одной пары, которая была рада поделиться им.", demo: "https://hubbleofficial1163-design.github.io/shablon6/"},
+        { id: 18, name: "Terra", style: "Кофейная элегантность", desc: "Глубокие оттенки шоколада и кофе, изысканная типографика, линейные иллюстрации и плавные изогнутые линии. Идеален для стильной осенней или камерной свадьбы.", demo: "https://hubbleofficial1163-design.github.io/shablon10/" }
     ];
 
     function renderTemplates() {
@@ -4167,7 +4169,7 @@ function openModal(id, name, imgSrc, shortDesc) {
     if (!modal) return;
     modalImage.src = imgSrc;
     modalTitle.innerText = name;
-    const fullDesc = shortDesc + " Полная версия сайта-приглашения включает: таймер до свадьбы, карту проезда, программу вечера, форму RSVP и онлайн-галерею для фотографий.";
+    const fullDesc = shortDesc + " Полная версия сайта-приглашения включает: таймер до свадьбы, карту проезда, программу дня, форму RSVP и онлайн-галерею для фотографий (при необходимости).";
     modalDesc.innerText = fullDesc;
     
     // ← БЕРЁМ URL ИЗ ДАННЫХ
